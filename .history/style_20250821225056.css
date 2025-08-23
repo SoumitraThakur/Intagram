@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.head_title {
+    color: #9c9c9c;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.logo_text img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.3em;
+    margin-bottom: 2.3em;
+}
+
+.facebook {
+    text-align: center;
+}
+
+.hr-lines:before {
+    content: " ";
+    display: block;
+    height: 2px;
+    width: 115px;
+    position: absolute;
+    top: 50%;
+    /* left: 0; */
+    background: #dedede;
+}
+
+.hr-lines {
+    position: relative;
+}
+
+.hr-lines {
+    position: relative;
+    color: #999898;
+    /*  new lines  */
+    max-width: 290px;
+    margin: 1.3em auto;
+    text-align: center;
+}
+
+.hr-lines:after {
+    content: " ";
+    height: 2px;
+    width: 115px;
+    background: #dedede;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.fa-brands {
+    margin-right: 0.5rem;
+}
+
+.facebook button {
+    cursor: not-allowed;
+    text-align: center;
+    height: 3em;
+    width: 22em;
+    margin-bottom: 0.2em;
+    background-color: #0195f7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.input_email_password input {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.4rem;
+    height: 3em;
+    width: 22em;
+    padding-left: 8px;
+    color: #6d6d6d;
+    background-color: #fbfafa;
+    border: 1.8px solid #dedede;
+    border-radius: 3px;
+}
+
+.buttom {
+    text-align: center;
+}
+
+.buttom button {
+    text-align: center;
+    height: 2.5em;
+    width: 22em;
+    background-color: #4db6fa;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.sign_up {
+    text-align: center;
+    margin-top: 3em;
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.blue {
+    color: #4aa7d5;
+    font-weight: 500;
+    text-shadow: 0 0.5px;
+}
+
+.meta {
+    bottom: 0;
+}
+
+.meta {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: #6d6d6d;
+    font-size: 12px;
+    padding: 1em 0 1em 0;
+    background-color: #fafafa;
+    border: 0.2px solid rgb(189, 189, 189);
+}
+
+.meta_logo {
+    font-size: 15px;
+    background: linear-gradient(107.23deg, #F78655 17.56%, #DB3C63 32.7%, #BF4484 66.06%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.fa-meta {
+    font-size: 15px;
+    background: linear-gradient(90deg, #FDB95A 5.68%, #F27750 44.32%, rgba(239, 61, 76, 0.89) 87.5%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#error-msg{
+    text-align: center;
+}
+
+
+
+
+
+
+

