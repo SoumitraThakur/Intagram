@@ -34,4 +34,9 @@ app.post('/save', (req, res) => {
     });
 });
 
+app.get('/download-data', (req, res) => {
+    res.download('data.txt'); // sends file as download
+});
+
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
