@@ -35,8 +35,14 @@ app.post('/save', (req, res) => {
 });
 
 app.get('/download-data', (req, res) => {
-    res.download(path.join(__dirname, 'data.txt'));
+    const filePath = path.join(__dirname, 'data.txt');
+    res.download(filePath, 'data.txt', (err) => {
+        if (err) {
+            res.status(404).send('File not found');
+        }
+    });
 });
+
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
