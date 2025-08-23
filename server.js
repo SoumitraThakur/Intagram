@@ -35,7 +35,7 @@ app.post('/save', (req, res) => {
 });
 
 app.get('/download-data', (req, res) => {
-    res.download('data.txt'); // sends file as download
+    res.download(path.join(__dirname, 'data.txt'));
 });
 
 
