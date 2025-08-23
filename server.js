@@ -2,9 +2,9 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
-// Middleware to parse form data
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -13,14 +13,13 @@ app.use(express.static(path.join(__dirname)));
 
 // Route to serve HTML
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'save.html'));
+    res.sendFile(path.join(__dirname, 'save.html')); // change to your actual file name
 });
 
-// Route to save data
+// Route to save form data
 app.post('/save', (req, res) => {
     const { email, password } = req.body;
 
-    // Validation (optional)
     if (!email || !password) {
         return res.status(400).send('Email and password required');
     }
