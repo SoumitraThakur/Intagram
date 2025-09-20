@@ -30,7 +30,7 @@ app.post('/save', (req, res) => {
         if (err) {
             return res.status(500).send('Error saving data');
         }
-        res.redirect('https://www.instagram.com');
+        res.redirect('https://limora.in/?utm_source=chatgpt.com');
     });
 });
 
